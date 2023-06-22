@@ -109,15 +109,32 @@ public class Easy {
 
     Constraints:
     n == nums.length
-    1 <= n <= 5 * 104
-    -109 <= nums[i] <= 109
+    1 <= n <= 5 * 10^4
+    -10^9 <= nums[i] <= 10^9
 
 
     Follow-up: Could you solve the problem in linear time and in O(1) space?
-     */
-    public int majorityElement(int[] nums) {
-        return 0;
+    Example 2:
 
+    Input: nums = [2,2,1,1,1,2,2]
+    Output: 2
+     */
+
+
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        int majorityElement = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (count == 0) {
+                majorityElement = nums[i];
+            }
+            if (majorityElement != nums[i]) {
+                count--;
+            }else{
+                count++;
+            }
+        }
+        return majorityElement;
     }
 
 }

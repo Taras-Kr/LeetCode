@@ -110,18 +110,18 @@ public class EasyTest {
     }
 
     @Test
-    public void testMajorityElement(){
+    public void testMajorityElement() {
         List<int[]> actualArrays = Arrays.asList(
-                new int[]{3,2,3},
-                new int[]{2,2,1,1,1,2,2}
+                new int[]{3, 2, 3},
+                new int[]{2, 2, 1, 1, 1, 2, 2}
         );
         List<Integer> expectedResult = Arrays.asList(3, 2);
 
-        for (int i = 0; i< actualArrays.size(); i++){
+        for (int i = 0; i < actualArrays.size(); i++) {
             softAssert.assertThat(easy.majorityElement(actualArrays.get(i)))
                     .as("Case " + (i + 1) + ": result doesn't match")
                     .isEqualTo(expectedResult.get(i));
         }
-
+        softAssert.assertAll();
     }
 }
