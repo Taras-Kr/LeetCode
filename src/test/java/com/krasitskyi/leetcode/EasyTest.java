@@ -124,4 +124,20 @@ public class EasyTest {
         }
         softAssert.assertAll();
     }
+
+    @Test
+    public void testMaxProfit() {
+        List<int[]> actualPrices = Arrays.asList(
+                new int[]{7, 1, 5, 3, 6, 4},
+                new int[]{7,6,4,3,1}
+        );
+        List<Integer> expectedResults = Arrays.asList(5, 0);
+        for (int i = 0; i < actualPrices.size(); i++) {
+            softAssert.assertThat(easy.maxProfit(actualPrices.get(i)))
+                    .as("Case " + (i + 1) + ": result doesn't match")
+                    .isEqualTo(expectedResults.get(i));
+        }
+        softAssert.assertAll();
+
+    }
 }
